@@ -30,7 +30,7 @@ let maxBoundary = 100;
 let listSpacing = null;
 
 function GameScreen({ userNumber, onGameOver }) {
-  const initialGuess = generateRandomBetween(1, 2, userNumber);
+  const initialGuess = generateRandomBetween(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
   const [guessRounds, setGuessRounds] = useState([initialGuess]);
   const { width, height } = useWindowDimensions();
@@ -51,8 +51,8 @@ function GameScreen({ userNumber, onGameOver }) {
       (direction === "lower" && currentGuess < userNumber) ||
       (direction === "greater" && currentGuess > userNumber)
     ) {
-      Alert.alert("Nan mais wesh !!", "T'es serieux a mytho comme ca ?", [
-        { text: "Allez ment pas!", style: "cancelator" },
+      Alert.alert("Bruhh!!", "You know I know you're lying, right!?", [
+        { text: "C'mon... SAY THE TRUTH!!!", style: "cancel" },
       ]);
       return;
     }
